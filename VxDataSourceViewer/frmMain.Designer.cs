@@ -240,7 +240,7 @@ namespace VxDataSourceViewer
             // 
             this.lblConnectionResult.AutoSize = true;
             this.lblConnectionResult.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblConnectionResult.Location = new System.Drawing.Point(20, 131);
+            this.lblConnectionResult.Location = new System.Drawing.Point(495, 118);
             this.lblConnectionResult.Name = "lblConnectionResult";
             this.lblConnectionResult.Size = new System.Drawing.Size(154, 25);
             this.lblConnectionResult.TabIndex = 4;
