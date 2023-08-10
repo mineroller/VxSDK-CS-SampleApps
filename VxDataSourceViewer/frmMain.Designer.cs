@@ -41,6 +41,9 @@ namespace VxDataSourceViewer
             this.lstDataSources = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnCopyURL = new System.Windows.Forms.Button();
+            this.txtRtspEndpointURL = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblCamIP = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -52,10 +55,7 @@ namespace VxDataSourceViewer
             this.lblCamNumber = new System.Windows.Forms.Label();
             this.lblConnectionResult = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtRtspEndpointURL = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnCopyURL = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +76,7 @@ namespace VxDataSourceViewer
             this.groupBox1.Size = new System.Drawing.Size(1233, 73);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "VxPro / VxCore 로그인";
+            this.groupBox1.Text = "VxPro / VxCore Login Information";
             // 
             // txtVxCoreIP
             // 
@@ -92,9 +92,9 @@ namespace VxDataSourceViewer
             this.label9.Location = new System.Drawing.Point(8, 32);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 21);
+            this.label9.Size = new System.Drawing.Size(80, 21);
             this.label9.TabIndex = 5;
-            this.label9.Text = "Vx 서버 IP";
+            this.label9.Text = "Server IP:";
             // 
             // btnConnect
             // 
@@ -102,7 +102,7 @@ namespace VxDataSourceViewer
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(167, 31);
             this.btnConnect.TabIndex = 4;
-            this.btnConnect.Text = "연결";
+            this.btnConnect.Text = "Connect";
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
@@ -155,11 +155,11 @@ namespace VxDataSourceViewer
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 89);
+            this.label3.Location = new System.Drawing.Point(25, 89);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 21);
+            this.label3.Size = new System.Drawing.Size(70, 21);
             this.label3.TabIndex = 2;
-            this.label3.Text = "번호";
+            this.label3.Text = "Number";
             // 
             // groupBox2
             // 
@@ -181,7 +181,34 @@ namespace VxDataSourceViewer
             this.groupBox2.Size = new System.Drawing.Size(888, 469);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "선택된 카메라 (DataSource) 정보";
+            this.groupBox2.Text = "Information on the selected camera (DataSource)";
+            // 
+            // btnCopyURL
+            // 
+            this.btnCopyURL.Location = new System.Drawing.Point(763, 358);
+            this.btnCopyURL.Name = "btnCopyURL";
+            this.btnCopyURL.Size = new System.Drawing.Size(112, 30);
+            this.btnCopyURL.TabIndex = 14;
+            this.btnCopyURL.Text = "Copy Address";
+            this.btnCopyURL.UseVisualStyleBackColor = true;
+            this.btnCopyURL.Click += new System.EventHandler(this.btnCopyURL_Click);
+            // 
+            // txtRtspEndpointURL
+            // 
+            this.txtRtspEndpointURL.Location = new System.Drawing.Point(25, 393);
+            this.txtRtspEndpointURL.Name = "txtRtspEndpointURL";
+            this.txtRtspEndpointURL.ReadOnly = true;
+            this.txtRtspEndpointURL.Size = new System.Drawing.Size(850, 29);
+            this.txtRtspEndpointURL.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 358);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(390, 21);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "RTSP Endpoint Address for Primary Unicast Stream";
             // 
             // lblCamIP
             // 
@@ -189,9 +216,9 @@ namespace VxDataSourceViewer
             this.lblCamIP.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblCamIP.Location = new System.Drawing.Point(101, 46);
             this.lblCamIP.Name = "lblCamIP";
-            this.lblCamIP.Size = new System.Drawing.Size(108, 25);
+            this.lblCamIP.Size = new System.Drawing.Size(118, 25);
             this.lblCamIP.TabIndex = 11;
-            this.lblCamIP.Text = "(카메라 IP)";
+            this.lblCamIP.Text = "(Camera IP)";
             // 
             // label7
             // 
@@ -228,9 +255,9 @@ namespace VxDataSourceViewer
             this.lblCamUUID.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblCamUUID.Location = new System.Drawing.Point(101, 175);
             this.lblCamUUID.Name = "lblCamUUID";
-            this.lblCamUUID.Size = new System.Drawing.Size(138, 25);
+            this.lblCamUUID.Size = new System.Drawing.Size(74, 25);
             this.lblCamUUID.TabIndex = 7;
-            this.lblCamUUID.Text = "(카메라 UUID)";
+            this.lblCamUUID.Text = "(UUID)";
             // 
             // label8
             // 
@@ -247,18 +274,18 @@ namespace VxDataSourceViewer
             this.lblCamName.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblCamName.Location = new System.Drawing.Point(101, 132);
             this.lblCamName.Name = "lblCamName";
-            this.lblCamName.Size = new System.Drawing.Size(128, 25);
+            this.lblCamName.Size = new System.Drawing.Size(153, 25);
             this.lblCamName.TabIndex = 5;
-            this.lblCamName.Text = "(카메라 이름)";
+            this.lblCamName.Text = "(Camera Name)";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(53, 132);
+            this.label6.Location = new System.Drawing.Point(42, 132);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 21);
+            this.label6.Size = new System.Drawing.Size(53, 21);
             this.label6.TabIndex = 4;
-            this.label6.Text = "이름";
+            this.label6.Text = "Name";
             // 
             // lblCamNumber
             // 
@@ -266,9 +293,9 @@ namespace VxDataSourceViewer
             this.lblCamNumber.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblCamNumber.Location = new System.Drawing.Point(101, 89);
             this.lblCamNumber.Name = "lblCamNumber";
-            this.lblCamNumber.Size = new System.Drawing.Size(128, 25);
+            this.lblCamNumber.Size = new System.Drawing.Size(127, 25);
             this.lblCamNumber.TabIndex = 3;
-            this.lblCamNumber.Text = "(카메라 번호)";
+            this.lblCamNumber.Text = "(Camera No)";
             // 
             // lblConnectionResult
             // 
@@ -276,9 +303,9 @@ namespace VxDataSourceViewer
             this.lblConnectionResult.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblConnectionResult.Location = new System.Drawing.Point(12, 93);
             this.lblConnectionResult.Name = "lblConnectionResult";
-            this.lblConnectionResult.Size = new System.Drawing.Size(154, 25);
+            this.lblConnectionResult.Size = new System.Drawing.Size(228, 25);
             this.lblConnectionResult.TabIndex = 4;
-            this.lblConnectionResult.Text = "(서버 접속 정보)";
+            this.lblConnectionResult.Text = "(Connected Server Info)";
             this.lblConnectionResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -286,26 +313,9 @@ namespace VxDataSourceViewer
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(21, 139);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 21);
+            this.label4.Size = new System.Drawing.Size(124, 21);
             this.label4.TabIndex = 5;
-            this.label4.Text = "카메라 목록";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 358);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(307, 21);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "고화질 RTSP 스트림 주소 (Primary RTSP)";
-            // 
-            // txtRtspEndpointURL
-            // 
-            this.txtRtspEndpointURL.Location = new System.Drawing.Point(25, 393);
-            this.txtRtspEndpointURL.Name = "txtRtspEndpointURL";
-            this.txtRtspEndpointURL.ReadOnly = true;
-            this.txtRtspEndpointURL.Size = new System.Drawing.Size(850, 29);
-            this.txtRtspEndpointURL.TabIndex = 13;
+            this.label4.Text = "List of Cameras";
             // 
             // btnExit
             // 
@@ -313,19 +323,9 @@ namespace VxDataSourceViewer
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(173, 33);
             this.btnExit.TabIndex = 6;
-            this.btnExit.Text = "프로그램 종료";
+            this.btnExit.Text = "QUIT";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnCopyURL
-            // 
-            this.btnCopyURL.Location = new System.Drawing.Point(763, 358);
-            this.btnCopyURL.Name = "btnCopyURL";
-            this.btnCopyURL.Size = new System.Drawing.Size(112, 30);
-            this.btnCopyURL.TabIndex = 14;
-            this.btnCopyURL.Text = "주소 복사";
-            this.btnCopyURL.UseVisualStyleBackColor = true;
-            this.btnCopyURL.Click += new System.EventHandler(this.btnCopyURL_Click);
             // 
             // frmMain
             // 
